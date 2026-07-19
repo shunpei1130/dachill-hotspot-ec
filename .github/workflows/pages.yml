@@ -26,7 +26,7 @@ jobs:
         with:
           enablement: true
       - name: Prepare static site
-        run: cp public/dachill-world.png pages/dachill-world.png
+        run: cp public/dachill-world.webp pages/dachill-world.webp
       - uses: actions/upload-pages-artifact@v3
         with:
           path: pages
