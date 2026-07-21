@@ -26,7 +26,7 @@ const faq = [
 ];
 
 function ModalBody({ id }: { id: string }) {
-  if (id === "product") return <><p className="eyebrow">座ると、もう少し話したくなる。</p><h2>DACHILL STOOL 01</h2><p className="price">¥4,980 <small>（税込・送料込み）</small></p><div className="chips"><span>BLACK</span><span>CREAM</span><span>BLUE</span></div><dl><div><dt>在庫</dt><dd>在庫あり</dd></div><div><dt>仕様</dt><dd>約1.0kg／耐荷重150kg／高さ約6.5〜45cm</dd></div></dl><a className="buy" href="#purchase-placeholder" onClick={(e)=>e.preventDefault()}>このダチを迎える <span>→</span></a><p className="note">現在は仮リンクです。Shopify / Stripeへ接続予定。</p></>;
+  if (id === "product") return <><p className="eyebrow">座ると、もう少し話したくなる。</p><h2>DACHILL STOOL 01</h2><p className="price">¥4,980 <small>（税込・送料込み）</small></p><div className="chips"><span>BLACK</span><span>CREAM</span><span>BLUE</span></div><dl><div><dt>在庫</dt><dd>在庫あり</dd></div><div><dt>仕様</dt><dd>約1.0kg／耐荷重150kg／高さ約6.5〜45cm</dd></div></dl><a className="buy" href="https://buy.stripe.com/6oUfZh2uKaMj6QrdVf1Jm00">このダチを迎える <span>→</span></a><p className="note">Stripeの安全な決済画面へ移動します。</p></>;
   if (id === "specs") return <><p className="stamp">DETAILS / SPECS</p><h2>小さいのに、ちゃんと頼れる。</h2><dl className="spec-list"><div><dt>収納サイズ</dt><dd>直径 約25cm × 厚さ 約6.5cm</dd></div><div><dt>使用時の高さ</dt><dd>約6.5〜45cm</dd></div><div><dt>重量</dt><dd>約1.0kg</dd></div><div><dt>耐荷重</dt><dd>150kg</dd></div><div><dt>高さ調整</dt><dd>段階調整式</dd></div></dl></>;
   if (id === "howto") return <><p className="stamp">カンタン3ステップ！</p><h2>シュッ、ポン。もう座れる。</h2><ol className="steps"><li><b>01</b><span>ストラップで持ち運ぶ</span></li><li><b>02</b><span>両端を持って、ひねりながら伸ばす</span></li><li><b>03</b><span>好きな高さで固定。収納時は逆の手順で。</span></li></ol></>;
   if (id === "story") return <><p className="eyebrow">DACHILL STORY</p><h2>ダチと、まだ帰らない。</h2><p>帰り道の「もうちょっと話そうぜ」を、ちゃんと座れる時間に変える。DACHILLは、ダチと過ごす何でもない夜を少しだけ長くする道具です。</p><p>アウトドアのためだけでも、家具のためだけでもない。車に積んで、気が向いた場所で広げて、話が終わったら畳む。そんな軽いノリから生まれました。</p></>;
@@ -50,7 +50,7 @@ export default function Home() {
   return <main className="world" onPointerMove={resetHint} onPointerDown={resetHint}>
     <div className="intro" aria-hidden="true"><span>DACHILL</span><i>ダチと、まだ帰らない。</i></div>
     <div className="scene">
-      <img src="/dachill-world.png" alt="深夜のコンビニ前で友人たちがDACHILLのスツールを囲んで過ごす漫画風イラスト" draggable="false" />
+      <img src="/dachill-world.webp" alt="深夜のコンビニ前で友人たちがDACHILLのスツールを囲んで過ごす漫画風イラスト" draggable="false" />
       {spots.map((spot)=><button key={spot.id} className={`hotspot ${hint?"hint":""}`} style={{left:`${spot.x}%`,top:`${spot.y}%`,width:`${spot.w}%`,height:`${spot.h}%`}} aria-label={spot.label} onClick={()=>setActive(spot)}><span>{spot.label}<b>＋</b></span></button>)}
     </div>
     {active && <div className="overlay" role="presentation" onMouseDown={(e)=>{if(e.target===e.currentTarget)setActive(null)}}>
